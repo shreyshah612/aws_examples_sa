@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "==== create bucket."
+
+# Check if there is 1 argument provided
+if [ -z "$1" ]; then
+    echo "No input argument provided!! The arg should be 'my-bucket-name'"
+    exit 1
+fi
+
+BUCKET_NAME="$1"
+
+aws s3api create-bucket \
+    --bucket "$BUCKET_NAME" \
+    --create-bucket-configuration '{"LocationConstraint": "ca-central-1"}' \
+    --query 'Location' \
+    --output text
