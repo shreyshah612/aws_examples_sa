@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+echo "==== sync files."
+
+# Exit immediately if any command returns non-zero status
+set -e
+
+OUTPUT_DIR="/tmp/s3-bash-scripts"
+
+# lets create output folder
+mkdir -p $
+
+# Generate a random number of files between 10 and 12
+NUM_FILES=$((RANDOM % 3 + 10))
+
+# Loop to create each file
